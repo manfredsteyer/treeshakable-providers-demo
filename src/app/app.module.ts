@@ -1,4 +1,4 @@
-import { FlightBookingModule } from './flight-booking/flight-booking.module';
+// import { FlightBookingModule } from './flight-booking/flight-booking.module';
 import { FlightService } from './flight-booking/flight.service';
 import { FlightSearchComponent } from './flight-booking/flight-search/flight-search.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,14 +18,13 @@ import { APP_ROUTES } from './app.routes';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FlightBookingModule,
+    // FlightBookingModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   declarations: [
     AppComponent,
     SidebarComponent,
-    NavbarComponent
-,
+    NavbarComponent,
     HomeComponent
 ],
   providers: [
