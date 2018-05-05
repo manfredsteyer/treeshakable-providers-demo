@@ -19,14 +19,12 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
     ],
     declarations: [
         FlightSearchComponent,
-        FlightCardComponent
-,
-    PassengerSearchComponent
-,
-    FlightEditComponent
-],
+        FlightCardComponent, 
+        PassengerSearchComponent,
+        FlightEditComponent
+    ],
     providers: [
-        FlightService
+    //    FlightService
     ],
     exports: [
         FlightSearchComponent

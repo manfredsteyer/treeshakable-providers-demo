@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Flight } from '../entities/flight';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class FlightService {
 
     flights: Flight[] = [];
