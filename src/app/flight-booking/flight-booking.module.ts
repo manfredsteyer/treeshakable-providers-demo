@@ -1,3 +1,4 @@
+import { FlightApiModule } from './../flight-api/flight-api.module';
 import { FlightService } from './flight.service';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
         CommonModule, 
         FormsModule, 
         SharedModule,
-        RouterModule.forChild(FLIGHT_BOOKING_ROUTES)
+        RouterModule.forChild(FLIGHT_BOOKING_ROUTES),
+        FlightApiModule
     ],
     declarations: [
         FlightSearchComponent,
