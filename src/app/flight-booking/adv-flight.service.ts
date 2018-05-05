@@ -1,21 +1,18 @@
-import { AdvancedFlightService } from './adv-flight.service';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flight } from '../entities/flight';
 import { AbstractFlightService } from './abstract-flight.service';
 
-@Injectable({ 
-    providedIn: 'root',
-    useClass: AdvancedFlightService,
-    deps: [HttpClient]
-})
-export class FlightService implements AbstractFlightService {
+@Injectable()
+export class AdvancedFlightService implements AbstractFlightService {
 
     flights: Flight[] = [];
 
-    constructor(private http: HttpClient) {}
-    // constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { 
+        console.debug('Advanced FlightService');
+        console.debug('http', http);
+    }
 
     load(from: string, to: string): void {
         this.find(from, to).subscribe(
