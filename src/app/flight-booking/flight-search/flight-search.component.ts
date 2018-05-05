@@ -1,8 +1,10 @@
+import { BOOKING_SERVICE } from './../../flight-api/flight-api.tokens';
 import { FlightService } from './../flight.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Flight } from '../../entities/flight';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { AbstractFlightService } from '../abstract-flight.service';
+import { FLIGHT_SERVICE } from '../../flight-api/flight-api.tokens';
 
 
 @Component({
@@ -27,7 +29,11 @@ export class FlightSearchComponent implements OnInit {
 
   //private http: HttpClient;
 
-  constructor(private flightService: AbstractFlightService) { 
+  constructor(
+    @Inject(FLIGHT_SERVICE) private flightService,
+    @Inject(BOOKING_SERVICE) private bookingService,
+  ) { 
+    console.debug('bookingService', bookingService);
     //this.http = http;
   }
 
