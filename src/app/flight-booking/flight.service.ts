@@ -5,11 +5,7 @@ import { Observable } from 'rxjs';
 import { Flight } from '../entities/flight';
 import { AbstractFlightService } from './abstract-flight.service';
 
-@Injectable({ 
-    providedIn: 'root',
-    useClass: AdvancedFlightService,
-    deps: [HttpClient]
-})
+@Injectable()
 export class FlightService implements AbstractFlightService {
 
     flights: Flight[] = [];

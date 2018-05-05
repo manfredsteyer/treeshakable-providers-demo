@@ -2,6 +2,7 @@ import { FlightService } from './../flight.service';
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../../entities/flight';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { AbstractFlightService } from '../abstract-flight.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class FlightSearchComponent implements OnInit {
 
   //private http: HttpClient;
 
-  constructor(private flightService: FlightService) { 
+  constructor(private flightService: AbstractFlightService) { 
     //this.http = http;
   }
 
