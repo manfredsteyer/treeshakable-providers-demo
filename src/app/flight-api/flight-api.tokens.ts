@@ -21,4 +21,15 @@ export const BOOKING_SERVICE = new InjectionToken<BookingService>('BOOKING_SERVI
     }
 );
 
+export const IBookingService = new InjectionToken<BookingService>('IBookingService',
+    { 
+        providedIn: 'root', 
+        factory: () => new BookingService(inject(<any>AbstractFlightService))
+    }
+);
+
+export interface IBookingService {
+    book(flight: Flight): void;
+}
+
 
