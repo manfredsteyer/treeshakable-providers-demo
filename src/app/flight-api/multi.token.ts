@@ -1,3 +1,7 @@
+/*
+ *  This example shows how to create sth like treeshakable multi-providers.
+*/
+
 import { Type, InjectionToken, inject } from "@angular/core";
 import { FlightService } from "../flight-booking/flight.service";
 import { FlightApiModule } from "./flight-api.module";
@@ -20,7 +24,14 @@ export const FLIGHT_SERVICES = new InjectionToken<AbstractFlightService[]>('FLIG
 );
 
 /*
- * Register default implementation. We always get this one but it's also treeshakable
- * if no own uses it.
+ * Register default implementation. We always get this one but it's also 
+ * treeshakable if no own uses it. The consuming modules can register 
+ * additional ones. 
+ * 
+ * For an example that shows registering further ones, see constructor in 
+ * flight-booking.module.ts.
+ * 
+ * For an example that shows injecting them, see flight-search.component.ts.
+ * 
 */
 registerFlightServiceFactory(() => new FlightService(inject(HttpClient)));
