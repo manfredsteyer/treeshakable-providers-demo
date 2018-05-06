@@ -1,3 +1,4 @@
+import { FLIGHT_SERVICES } from './../../flight-api/multi.token';
 import { BOOKING_SERVICE } from './../../flight-api/flight-api.tokens';
 import { FlightService } from './../flight.service';
 import { Component, OnInit, Inject } from '@angular/core';
@@ -32,8 +33,10 @@ export class FlightSearchComponent implements OnInit {
   constructor(
     @Inject(FLIGHT_SERVICE) private flightService,
     @Inject(BOOKING_SERVICE) private bookingService,
+    @Inject(FLIGHT_SERVICES) private flightServices
   ) { 
     console.debug('bookingService', bookingService);
+    console.debug('flightServices', flightServices);
     //this.http = http;
   }
 

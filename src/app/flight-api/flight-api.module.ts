@@ -1,5 +1,9 @@
-import { NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { registerFlightServiceFactory } from './multi.token';
+import { FlightService } from '../flight-booking/flight.service';
+import { AdvancedFlightService } from '../flight-booking/adv-flight.service';
 
 @NgModule({
   imports: [
@@ -7,4 +11,8 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: []
 })
-export class FlightApiModule { }
+export class FlightApiModule { 
+
+  constructor() {
+  }
+}
